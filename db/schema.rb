@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_04_23_225533) do
   end
 
   create_table "props", force: :cascade do |t|
+    t.integer "account_id"
     t.string "name"
     t.string "address"
     t.integer "price"
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_04_23_225533) do
     t.string "photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_props_on_account_id"
   end
 
 end
